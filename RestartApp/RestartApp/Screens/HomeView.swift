@@ -12,6 +12,8 @@ struct HomeView: View {
     @AppStorage("onboarding")  var isOnBoardingViewActive: Bool = false
     @State private var isAnimating: Bool = false
     
+    let hapticFeedback = UINotificationFeedbackGenerator()
+    
     var body: some View {
         
         VStack(spacing: 20) {
@@ -50,6 +52,7 @@ struct HomeView: View {
             
             Button {
                 withAnimation {
+                    hapticFeedback.notificationOccurred(.success)
                     playSound(sound: "success", type: "m4a")
                     isOnBoardingViewActive = true
                 }
