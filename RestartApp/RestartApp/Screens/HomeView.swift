@@ -20,7 +20,7 @@ struct HomeView: View {
             Spacer()
             
             ZStack {
-                CircleGroupView(ShapeColor: .gray, ShapeOpacity: 0.1)
+                CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.1)
                 
                 Image("character-2")
                     .resizable()
@@ -50,6 +50,7 @@ struct HomeView: View {
             
             Button {
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnBoardingViewActive = true
                 }
             }label: {
@@ -69,6 +70,7 @@ struct HomeView: View {
                 execute: {isAnimating = true}
             )
         }
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -153,6 +153,7 @@ struct OnboardingView: View {
                                         {
                                             buttonOffset = 0
                                         } else {
+                                            playSound(sound: "chimeup", type: "mp3")
                                             buttonOffset = buttonWidth - 80
                                             isOnboardingViewActive = false
                                         }
@@ -174,6 +175,7 @@ struct OnboardingView: View {
         .onAppear {
             isAnimating = true
         }
+        .preferredColorScheme(.dark)
     }
 }
 
